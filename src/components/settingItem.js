@@ -18,7 +18,7 @@ export default class SettingItem extends Component {
                 <View style={{flexDirection:'row',alignItems:'center',marginTop:10,marginBottom:5,marginLeft:5}}>
                     <Text>{this.props.txt1}</Text>
                     <Text style={{fontSize:11,color:'#CCCCCC',position:'absolute',right:15}}>{this.props.txt2}</Text>
-                    <Image source={require('../../image/大于号.png')} style={{width:10,height:10,position:'absolute',right:5}} />
+                    <Image source={require('../images/大于号.png')} style={{width:10,height:10,position:'absolute',right:5}} />
                 </View>
             </TouchableOpacity>
         );

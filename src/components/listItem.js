@@ -1,5 +1,5 @@
 /**
- * Created by shaotingzhou on 2017/5/2.
+ * Created by ZhouJunlin on 2018/1/31.
  */
 import React, { Component } from 'react';
 import {
@@ -19,7 +19,7 @@ export default class MineItem extends Component {
                     <Image source={this.props.source} style={{width:30,height:30}} />
                     <Text>{this.props.txt1}</Text>
                     <Text style={{fontSize:11,color:'#CCCCCC'}}>{this.props.txt2}</Text>
-                    <Image source={require('../../image/大于号.png')} style={{width:10,height:10,position:'absolute',right:5}} />
+                    <Image source={require('../images/大于号.png')} style={{width:10,height:10,position:'absolute',right:5}} />
                 </View>
             </TouchableOpacity>
         );

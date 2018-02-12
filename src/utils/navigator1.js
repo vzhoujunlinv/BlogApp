@@ -13,6 +13,7 @@ import {
 var {width,height} = Dimensions.get('window');
 
 export default class Navigator1 extends Component {
+
     render() {
         return (
             <View style={styles.container}>

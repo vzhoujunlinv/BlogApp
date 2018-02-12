@@ -8,73 +8,36 @@ import {
   Image,
   StatusBar
 } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
+import RootTabs from './utils/tabNavigator';
 import HomeScreen from './pages/home';
 import ProfileScreen from './pages/profile';
+import Setting from './pages/setting'
+import CommentList from './pages/comment'
 
 
-
-
-// class ProfileScreen extends React.Component {
-//   static navigationOptions = {
-//     tabBarLabel: '我',
-//     tabBarIcon: ({ focused, tintColor }) => (
-//       <Image
-//         source={focused ? require('./images/ic_hot_home.png') : require('./images/ic_find_hot.png')}
-//         style={{ width: 26, height: 26, tintColor: tintColor }}
-//       />
-//     )
-//   };
-//   render() {
-//     return (
-//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//         <Text>个人界面</Text>
-//       </View>
-//     );
-//   }
-// }
-
-const RootTabs = TabNavigator(
+const Navigator = StackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
-      
-    },
-    // Add:{
-    //   screen: a,
-    // },
-    ProfileScreen: {
-      screen: ProfileScreen,
-    },
+    Tab: { screen: RootTabs },
+    Setting: { screen: Setting },
+    CommentList: { screen: CommentList }
   },
-  {
-    tabBarOptions: {
-      activeTintColor: '#4BC1D2',
-      inactiveTintColor: '#000',
-      showIcon: true,
-      showLabel: true,
-      upperCaseLabel: false,
-      pressColor: '#823453',
-      pressOpacity: 0.8,
-      style: {
+  {  
+    navigationOptions:{  
+      headerBackTitle:null,  
+      headerTintColor:'#333333',  
+      showIcon:true,  
+      swipeEnabled:false,  
+      animationEnabled:false,
+      headerTitle:"Blog",
+      headerTitleStyle: {
         backgroundColor: '#fff',
         paddingBottom: 0,
-        borderTopWidth: 0.5,
-        borderTopColor: '#ccc',
       },
-      labelStyle: {
-        fontSize: 12,
-        margin: 1
-      },
-      indicatorStyle: { height: 0 }, 
-    },
-    tabBarPosition: 'bottom',
-    swipeEnabled: false,
-    animationEnabled: false,
-    lazy: true,
-    backBehavior: 'none',
-}
+    },  
+  
+    mode:'card',  
+  }
 );
 
-
-export default RootTabs;
+export default Navigator;

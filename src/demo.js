@@ -141,3 +141,9 @@ const MyApp = TabNavigator(
   });
 
 module.exports = MyApp;
+this.props.mynavigator.push({
+          component:Setting,
+          passProps:{
+              access_token:this.props.access_token
+          }
+      })

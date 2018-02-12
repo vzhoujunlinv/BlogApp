@@ -15,16 +15,16 @@ import {
     NativeModules,
     AsyncStorage
 } from 'react-native';
-import Navigator1 from '../Utils/navigator1'
-import SettingItem from './settingItem'
-import  TabBar from '../../tabBar'
+import Navigator1 from '../utils/navigator1';
+import SettingItem from '../components/settingItem';
+
+// import  TabBar from '../components/tabBar'
 
 var CalendarManager = NativeModules.CalendarManager;  //导入iOS端原生
 
 export default class Setting extends Component {
     constructor(props) {
         super(props);
-
         this.state = ({
             cache:0   //缓存大小
 
@@ -33,7 +33,8 @@ export default class Setting extends Component {
     render() {
         return (
             <View>
-                <Navigator1 leftText = '返回' centerText = '设置'  rightText = '  ' leftAction = {()=>this.leftAction()} rightAction = {() => this.rightAction()}/>
+                <Navigator1 leftText = '返回' centerText = '设置'  rightText = '  ' 
+                leftAction = {()=>this.leftAction()} rightAction = {() => this.rightAction()}/>
                 <ScrollView style={{marginBottom:0}}>
                     <View style={{backgroundColor:'#F0F0F0',height:10}}></View>
                     <SettingItem txt1 = '账号管理'/>
@@ -52,7 +53,7 @@ export default class Setting extends Component {
                         <View style={{flexDirection:'row',alignItems:'center',marginTop:10,marginBottom:5,marginLeft:5}}>
                             <Text>清理缓存</Text>
                             <Text style={{fontSize:11,color:'#CCCCCC',position:'absolute',right:15}}>{this.state.cache} KB</Text>
-                            <Image source={require('../../image/大于号.png')} style={{width:10,height:10,position:'absolute',right:5}} />
+                            <Image source={require('../images/大于号.png')} style={{width:10,height:10,position:'absolute',right:5}} />
                         </View>
                     </TouchableOpacity>
                     <View style={{backgroundColor:'#F0F0F0',height:1}}></View>
